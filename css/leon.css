@@ -1,0 +1,424 @@
+/* ---------------variables----------- */
+:root {
+    --main-color:#10cab7
+}
+/* ---------------variables----------- */
+
+
+/*Global rules   */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+    
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    /* margin: 0; */
+}
+
+/* test awesome fonts styling icon as example  
+.fa-file{
+    font-size: 222px;
+} */
+
+
+
+/* container to center content all time  */
+.container{
+    /* background-color: rgb(182, 80, 80); */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right:auto;
+     /* خلاه ف النص  */
+}
+
+/* all screen width  */
+/* small */
+@media(min-width:768px){
+    .container{
+        width:750px;
+    }
+}
+/* medium screen */
+@media(min-width:992px){
+    .container{
+        width:970px;
+
+    }
+}
+/* large screen  */
+@media (min-wdth:1200px){
+    .container{
+        width:1170px;
+    }
+}
+
+/* @media(min-width:300px){
+    .classname{
+        style:value;
+    }
+} */
+
+.header{
+    background-color: lightslategray;
+}
+.header .container {
+    display:flex;
+    /* space between logo +links>>icons+ul */
+    justify-content: space-between;
+    /* center logo with center links */
+    align-items:center ;
+}
+/* .headre+space+.logo ده عشان تختار حاجه جوه حاجه  */
+.header .logo{
+    width: 35px;
+
+}
+
+/* -------links: icons>>3span+ul>>4(li+a) */
+.header .links{
+    position:relative;
+}
+
+.header .links .icons{
+    width:25px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    /* padding-top: 4px; */
+    /*align left but for elements inside container  */
+
+}
+/* span inside icons */
+.header .links .icons span{
+
+    background-color: rgb(8, 5, 5);
+    margin-bottom: 4px;
+    height: 2px;
+    
+
+}
+.header .links .icons span:first-child{
+    width: 100%;
+    margin-top: 4px;
+
+}
+.header .links .icons span:nth-child(2){
+    width: 80%;
+    transition: 0.8s;
+}
+/* when hover any link and icon  */
+.header .links:hover .icons span:nth-child(2){
+    width:100%;
+}
+
+.header .links .icons span:last-child{
+    width: 100%;
+    
+    
+
+}
+
+.header .container .links ul{
+    list-style:none ;
+    background-color:#ccc;
+    margin: 0;
+    position: absolute;
+    right:0;
+    top:calc(100% + 6px);
+    min-width:200px;
+    padding:10px;
+    /* text-align: center; */
+    display: none;
+    transition:2s;
+    text-align: center;
+    z-index: 1;
+    
+} 
+.header .container .links:hover ul{
+    display: block;
+}
+.header .container .links ul:hover {
+    display: block;
+}
+
+
+.header .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent;
+    position: absolute;
+    right: 0px;
+    top: -20px;
+}
+
+.header .container .links ul li {
+    
+    transition: .5s;
+    
+}
+.header .container .links ul li:not(:last-child) {
+    
+    border-bottom: 2px solid black;
+    
+    
+}
+
+.header .container .links ul li a{
+    
+    text-decoration: none;
+    transition: .8s;
+    
+    
+}
+
+
+.header .container .links ul a:hover{
+    margin-left: 20px;
+}
+/* --------end Header------- */
+
+
+/* start landing  */
+.landing {
+    background-image: url(../images/mountain.jpg);
+    background-size: cover;
+    /* cant change opacity of background alone without long code */
+    height:calc(100vh - 22px);
+    position:relative; 
+    text-align: center;
+
+}
+.landing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.landing .container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: azure;
+    
+    
+
+}
+
+.landing .container h1{
+    margin-top: 0;
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 50px;
+    /* width: 320px; */
+    /* opacity:1; */
+    border: 5px solid var(--main-color);
+    /* max-width: 350px; */
+}
+
+.landing .container p{
+    
+    /* opacity:1; */
+    font-size: 18px;
+    /*The New Edit Here*/
+    max-width: 350px;
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+} 
+/* end of landing  */
+
+/* start of features */
+
+.features{
+    
+    padding-top:100px;
+    padding-bottom: 50px;
+}
+.features .container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,  minmax(200px,1fr));
+    gap:20px;
+}
+@media(min-width:768px){
+    .features.container{
+        width:750px;
+    }
+}
+/* end of features */
+
+
+/* global used  */
+.special-heading{
+    margin-bottom: 60px;
+    text-align: center;
+    
+}
+.special-heading h2{
+    font-size: 80px;
+    margin: 0;
+    color:#ccc;
+    font-weight: 800;
+    letter-spacing: 6px;
+
+}
+.special-heading h2 + p {
+    top:- 20px;
+    margin-top:-30px;
+    color:rgb(12, 12, 12);
+
+}
+@media (max-width:767px){
+    .special-heading h2{
+        max-width: 100%;
+    }
+    .special-heading p {
+        margin-top:-20px;
+    }
+}
+/* * { */
+    /* border: 2px solid  black; */
+/* } */
+/* End global used  */
+
+/* start of  services */
+.services .container .serv-cont{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    /* grid-template-columns: repeat(3,1fr); */
+    /* margin-top: 40px; */
+}
+.services .container .serv-cont .col{
+
+}
+.services .container .serv-cont .col .box{
+    display: flex;
+    margin-bottom: 30px;
+}
+.services .container .serv-cont .col .box i{
+    flex-basis: 100px;
+}
+
+.services .container .serv-cont .col .box .text{
+    flex:1;
+}
+.services .container .serv-cont  .box h1{
+    margin: 0;
+    font-size: 22px;
+    
+}
+.services .container .serv-cont  .box p{
+    margin: 0;
+    
+}
+
+
+.services .container .serv-cont img{
+    border: 2px solid black;
+    
+    width:100%;
+    /* margin-top: 50%; */
+    /* position: relative; */
+    
+
+}
+.services .container .serv-cont .col-img {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.services .container .serv-cont .col-img .img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.services .container .serv-cont .col-img .img::before{
+    content:'';
+    position:absolute;
+    width:150px;
+    height: calc(200px + 50px );
+    background-color: rgb(9, 9, 103);
+    z-index: -1;
+    right: -25px;
+    top:-25px;
+}
+
+/* end of services */
+.portfolio .container .project{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    
+}
+
+.portfolio .container .project img{
+    width:100%;
+    margin-bottom: 0;
+}
+.portfolio .container .project h2{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.portfolio .container .project p{
+    margin-top: 0;
+}
+
+.about .container .about-cont {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 200px; 
+
+
+}
+.about .container .about-cont .img-o{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-basis: 80%;
+
+}
+.about .container .about-cont .img{
+    position: relative;
+    display: flex;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.about .container .about-cont .img::before{
+    content: "";
+    width: 50%;
+    height: calc(100% + 40px);
+    background-color: rgb(14, 14, 106);
+    z-index: -1;
+    position: absolute;
+    left: -10%;;
+    top:-20px
+    
+}
+.root{
+    --width:70px;
+}
+.about .container .about-cont .img::after{
+    content: "";
+    width: 60px;
+    height: 70%;
+    border-bottom: 40px solid red ;
+    border-left:40px solid red ;;
+    z-index:-1;
+    position: absolute;
+    right: calc( -60px - 40px + 20px);
+    top: -40px;
+
+}
+
+.about .container .about-cont img{
+    width:100%;
+}
